@@ -22,19 +22,19 @@ export default function ScrollGraphic(): React.ReactElement {
     <div className="h-[240vh] w-full  bg-[#111111]" ref={containerRef}>
       <div className="sticky top-0 left-0 h-screen">
         <motion.div
-          className="h-screen absolute w-full flex items-center justify-center   text-8xl text-[#e9e9e9] font-bold"
+          className="h-screen absolute w-full flex items-center justify-center   md:text-8xl text-6xl text-[#e9e9e9] font-bold"
           style={{ opacity: learnOpacity }}>
           Learn
         </motion.div>
 
         <motion.div
-          className="h-screen w-full absolute flex items-center justify-center  text-8xl text-[#e9e9e9] font-bold"
+          className="h-screen w-full absolute flex items-center justify-center  md:text-8xl text-6xl text-[#e9e9e9] font-bold"
           style={{ opacity: implementOpacity }}>
           Implement
         </motion.div>
 
         <motion.div
-          className="h-screen absolute w-full flex items-center justify-center  text-8xl text-[#00cc00] font-bold"
+          className="h-screen absolute w-full flex items-center justify-center  md:text-8xl text-6xl text-[#00cc00] font-bold"
           style={{ opacity: iterateOpacity }}>
           Iterate
         </motion.div>

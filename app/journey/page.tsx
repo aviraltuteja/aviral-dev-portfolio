@@ -1,22 +1,19 @@
-import Experience from "@/components/about-page/experience";
-import Explanation from "@/components/about-page/explanation";
-import ScrollGraphic from "@/components/about-page/scroll-graphic";
+import JourneyTimeline from "@/components/journey-page";
 import SecondaryBG from "@/components/secondary-bg";
-import React from "react";
 
-export default function AboutUsPage(): React.ReactElement {
+export default function Journey(): React.ReactElement {
   return (
     <div className="w-full min-h-[100vh] flex flex-col">
       <div className="w-full h-[100vh] bg-[#e9e9e9] text-[#111111] flex items-center justify-center">
-        <div className="absolute w-full h-auto">
+        <div className="absolute w-full md:h-auto h-[100vh]">
           <SecondaryBG />
         </div>
         <div className="flex flex-col text-center">
           <div className="md:text-4xl 2xl:text-5xl font-medium">
-            My designation is Software Developer but
+            These are the major milestones which will give an idea
           </div>
           <div className="md:text-6xl 2xl:text-7xl">
-            I am essentially a{" "}
+            of how I became a{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-bl from-blue-500 to-[#00cc00] font-medium">
               Problem Solver
             </span>
@@ -24,9 +21,7 @@ export default function AboutUsPage(): React.ReactElement {
           </div>
         </div>
       </div>
-      <ScrollGraphic />
-      <Explanation />
-      <Experience />
+      <JourneyTimeline />
     </div>
   );
 }

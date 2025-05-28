@@ -123,7 +123,7 @@ export default function Projects(): React.ReactElement {
     ? projectData.filter((project) => project.skills.includes(activeSkill))
     : projectData;
   return (
-    <div className="w-full min-h-[100vh] bg-[#111111] px-20">
+    <div className="w-full min-h-[100vh] bg-[#111111] md:px-20 px-6">
       <div className="p-6 gap-8 flex flex-col items-center">
         <div className="flex gap-4 flex-wrap">
           {allSkills.map((skill) => (
@@ -132,7 +132,7 @@ export default function Projects(): React.ReactElement {
               onClick={() =>
                 setActiveSkill(skill === activeSkill ? null : skill)
               }
-              className={`px-4 py-2 rounded-sm cursor-pointer md:text-base 2xl:text-xl  ${
+              className={`px-4 py-2 rounded-sm cursor-pointer text-sm md:text-base 2xl:text-xl  ${
                 activeSkill === skill
                   ? "bg-[#00aa00] text-[#e9e9e9]"
                   : "bg-gradient-to-r from-[#222222] via-transparent to-[#222222] text-[#e9e9e9]"

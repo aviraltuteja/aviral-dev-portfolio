@@ -9,7 +9,7 @@ export default function Navbar(): React.ReactElement {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="md:h-20 2xl:h-28 w-full bg-[#e9e9e9] backdrop-blur-md  flex items-center justify-between px-24 absolute top-0 z-30 transition duration-300">
+    <nav className="md:h-20 2xl:h-28 h-16 w-full bg-[#e9e9e9] backdrop-blur-md  flex items-center justify-between px-24 absolute top-0 z-30 transition duration-300">
       <div className="md:text-2xl 2xl:text-4xl font-bold text-black">
         <Link href="/">AT</Link>
       </div>
@@ -28,7 +28,7 @@ export default function Navbar(): React.ReactElement {
       </div>
 
       {/* Hamburger Icon */}
-      <div className="md:hidden">
+      <div className="md:hidden text-black">
         <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle Menu">
           <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} size="lg" />
         </button>
@@ -38,19 +38,19 @@ export default function Navbar(): React.ReactElement {
       {menuOpen && (
         <div className="absolute top-24 left-0 w-full bg-[#e9e9e9] flex flex-col items-center space-y-6 py-6 z-50 md:hidden">
           <a
-            href="#contact"
+            href="contact"
             className="text-black text-lg"
             onClick={() => setMenuOpen(false)}>
             Contact
           </a>
           <a
-            href="#about"
+            href="about"
             className="text-black text-lg"
             onClick={() => setMenuOpen(false)}>
             About
           </a>
           <a
-            href="#journey"
+            href="journey"
             className="text-black text-lg"
             onClick={() => setMenuOpen(false)}>
             Journey

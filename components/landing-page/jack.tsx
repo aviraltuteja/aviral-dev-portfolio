@@ -14,12 +14,12 @@ export default function JackOfAll(): React.ReactElement {
 
   return (
     <div
-      className="w-full h-[40vh] bg-[#111111] text-6xl text-[#e3e3e3] flex justify-center items-start text-center leading-16 py-10"
+      className="w-full h-[40vh] bg-[#111111] md:text-6xl text-xl text-[#e3e3e3] flex justify-center items-start text-center md:leading-16 leading-6 py-10"
       ref={targetRef}>
       <div className="flex flex-col gap-2">
         {" "}
         <div> Jack of all trades master of none</div>
-        <p className="text-transparent  z-20 md:px-20 px-10    flex flex-wrap gap-[0.35rem] md:gap-2 2xl:gap-4">
+        <p className="text-transparent  z-20 md:px-20 px-4     flex flex-wrap gap-[0.35rem] md:gap-2 2xl:gap-4">
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 1 / words.length;
