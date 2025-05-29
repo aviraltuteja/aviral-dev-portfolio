@@ -5,7 +5,7 @@ export default function Journey(): React.ReactElement {
   return (
     <div className="w-full min-h-[100vh] flex flex-col">
       <div className="w-full h-[100vh] bg-[#e9e9e9] text-[#111111] flex items-center justify-center">
-        <div className="absolute w-full md:h-auto h-[100vh]">
+        <div className="absolute w-full">
           <SecondaryBG />
         </div>
         <div className="flex flex-col text-center">

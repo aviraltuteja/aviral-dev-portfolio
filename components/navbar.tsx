@@ -9,7 +9,7 @@ export default function Navbar(): React.ReactElement {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="md:h-20 2xl:h-28 h-16 w-full bg-[#e9e9e9] backdrop-blur-md  flex items-center justify-between px-24 absolute top-0 z-30 transition duration-300">
+    <nav className="md:h-20 2xl:h-28 h-16 w-full bg-[#e9e9e9] backdrop-blur-md  flex items-center justify-between md:px-24 px-8 absolute top-0 z-30 transition duration-300">
       <div className="md:text-2xl 2xl:text-4xl font-bold text-black">
         <Link href="/">AT</Link>
       </div>
