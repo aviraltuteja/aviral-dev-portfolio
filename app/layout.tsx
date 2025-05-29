@@ -6,6 +6,17 @@ import Navbar from "@/components/navbar";
 export const metadata: Metadata = {
   title: "Aviral Tuteja",
   description: "Full Stack Developer",
+  openGraph: {
+    title: "Aviral Tuteja",
+    description: "Full Stack Developer",
+
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    title: "Aviral Tuteja",
+    description: "Full Stack Developer",
+  },
 };
 
 const jost = Jost({
