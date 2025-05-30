@@ -252,6 +252,7 @@ export default function JourneyTimeline(): React.ReactElement {
                               alt={milestone.title}
                               className="rounded-xl shadow object-contain "
                               fill
+                              placeholder="blur"
                             />
                           </a>
                         </div>
