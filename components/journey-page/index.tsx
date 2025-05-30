@@ -194,7 +194,7 @@ export default function JourneyTimeline(): React.ReactElement {
 
   return (
     <div
-      className="relative w-full max-w-4xl mx-auto py-10 px-4"
+      className="relative w-full max-w-4xl mx-auto py-10 px-4 bg-[#111111]"
       ref={containerRef}>
       {/* Journey Title */}
       <div className="text-4xl font-bold text-center mb-10 text-[#e9e9e9]">
