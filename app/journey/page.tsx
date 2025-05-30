@@ -3,7 +3,7 @@ import SecondaryBG from "@/components/secondary-bg";
 
 export default function Journey(): React.ReactElement {
   return (
-    <div className="w-full min-h-[100vh] flex flex-col">
+    <div className="w-full min-h-[100vh] flex flex-col bg-[#111111]">
       <div className="w-full h-[100vh] bg-[#e9e9e9] text-[#111111] flex items-center justify-center">
         <div className="absolute w-full hidden md:block">
           <SecondaryBG />
