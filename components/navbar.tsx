@@ -16,14 +16,14 @@ export default function Navbar(): React.ReactElement {
 
       {/* Right - Menu Items */}
       <div className="hidden md:flex space-x-8 text-black md:text-lg 2xl:text-xl">
-        <a href="contact" className="hover:text-gray-600">
-          Contact
-        </a>
         <a href="about" className="hover:text-gray-600">
           About
         </a>
         <a href="journey" className="hover:text-gray-600">
           Journey
+        </a>
+        <a href="contact" className="hover:text-gray-600">
+          Contact
         </a>
       </div>
 

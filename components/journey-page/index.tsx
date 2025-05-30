@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export interface milestone {
   title: string;
@@ -21,7 +22,7 @@ export const journey: Journey = {
   milestones: [
     {
       title: "Full Stack Developer, Surety Seven",
-      image: null,
+      image: "/S7.png",
       yearIndex: 0,
       year: 2024,
       dateDisplay: "Feb 2024 - Present",
@@ -48,12 +49,21 @@ export const journey: Journey = {
     },
     {
       title: "Software Engineer Intern, Kaksha.ai",
-      image: null,
-      yearIndex: 1,
+      image: "/certi1.png",
+      yearIndex: 2,
       year: 2023,
       dateDisplay: "Sep 2023 - Jan 2024",
       description:
         "Worked on React-based projects, integrated third-party libraries, and collaborated on Python API integrations and Docker setups.",
+    },
+    {
+      title: "Screenwriter, Nemesis",
+      image: "/Nemesis.png",
+      yearIndex: 1,
+      year: 2023,
+      dateDisplay: "Dec 2019 - Aug 2023",
+      description:
+        "Short film titled 'Nemesis' got released on TataPlay Binge and Hungama for which I received awards for the best script/writer in 4 film festivals.",
     },
     {
       title: "Saanjh Matrimonial Services, Personal Project",
@@ -66,21 +76,30 @@ export const journey: Journey = {
     },
     {
       title: "Capture Films, College Project",
-      image: null,
+      image: "/Capture.png",
       yearIndex: 0,
       year: 2022,
       dateDisplay: "Aug 2022",
       description:
-        "Created a React-based landing page with animations for a college project. Learned fundamentals of frontend dev.",
+        "Created a React-based landing page with React for a college project. Learned fundamentals of frontend dev.",
     },
     {
-      title: "God in a Metro",
-      image: null,
+      title: "Co-Director and Producer, God in a Metro",
+      image: "/Godiam.png",
       yearIndex: 0,
       year: 2021,
       dateDisplay: "Apr 2021",
       description:
         "Released my Zero-Budget Web-series that I made with my college friends with limited resources and handled a team of 20+ people to achieve major targets like Background Score, Cinematic Shots, Voiceovers among other things.",
+    },
+    {
+      title: "Jr. Screenwriter and Script Supervisor, Barsaati Films",
+      image: null,
+      yearIndex: 0,
+      year: 2021,
+      dateDisplay: "Jul 2021 - Sep 2021",
+      description:
+        "Worked on the development of a Sitcom based in South Campus of Delhi University. Contributed as a screenwriter and a script sueprvisor along with other production and casting related tasks.",
     },
     {
       title: "Song got featured in Rolling Stones India",
@@ -121,7 +140,7 @@ export const journey: Journey = {
     },
     {
       title: "3rd Place, TCS ITWiz Delhi Edition",
-      image: null,
+      image: "/TCS.png",
       year: 2016,
       yearIndex: 2,
       dateDisplay: "2016",
@@ -221,13 +240,21 @@ export default function JourneyTimeline(): React.ReactElement {
                     </div>
 
                     {/* Right Side: Image */}
-                    <div className="md:w-1/2 md:pl-6">
+                    <div className="md:w-1/2 w-full md:pl-6 h-full">
                       {milestone.image ? (
-                        <img
-                          src={milestone.image}
-                          alt={milestone.title}
-                          className="w-full h-auto rounded-xl shadow"
-                        />
+                        <div className="h-64 relative w-full">
+                          <a
+                            href={milestone.image}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <Image
+                              src={milestone.image}
+                              alt={milestone.title}
+                              className="rounded-xl shadow object-contain "
+                              fill
+                            />
+                          </a>
+                        </div>
                       ) : (
                         <div className=""></div>
                       )}
