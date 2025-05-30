@@ -12,10 +12,10 @@ export default function AboutUsPage(): React.ReactElement {
           <SecondaryBG />
         </div>
         <div className="flex flex-col text-center">
-          <div className="md:text-4xl 2xl:text-5xl font-medium">
+          <div className="md:text-4xl text-2xl 2xl:text-5xl font-medium">
             My designation is Software Developer but
           </div>
-          <div className="md:text-6xl 2xl:text-7xl">
+          <div className="md:text-6xl 2xl:text-7xl text-3xl">
             I am essentially a{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-bl from-blue-500 to-[#00cc00] font-medium">
               Problem Solver

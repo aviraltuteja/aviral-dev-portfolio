@@ -2,8 +2,8 @@ import myphoto from "../../public/Asset 10.png";
 import Image from "next/image";
 export default function MainScreen(): React.ReactElement {
   return (
-    <div className="w-[100vw] md:h-[60vh] h-[80vh] flex flex-col">
-      <div className="h-full w-full bg-[#e9e9e9] md:text-6xl text-4xl text-zinc-900 p-2 flex flex-col justify-end items-center">
+    <div className="w-[100vw] md:h-[60vh] h-[100vh] flex flex-col ">
+      <div className="h-full w-full bg-[#e9e9e9] md:text-6xl text-2xl text-zinc-900 p-2 flex flex-col justify-center md:justify-end items-center">
         <div className="relative w-20 md:w-48 2xl:w-60 aspect-square my-4">
           <Image
             src={myphoto}

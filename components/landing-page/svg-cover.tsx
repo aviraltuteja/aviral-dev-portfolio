@@ -15,8 +15,13 @@ export default function SvgCover(): React.ReactElement {
   const opacity = useTransform(scrollYProgress, [0.75, 0.85], [0, 1]);
 
   return (
-    <div ref={containerRef}>
-      <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <div
+      ref={containerRef}
+      className="w-full aspect-[16/9] md:h-auto md:block hidden">
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1920 1080"
+        className="w-full h-full">
         <defs>
           <filter id="AI_GaussianBlur_4">
             <feGaussianBlur stdDeviation={4} />

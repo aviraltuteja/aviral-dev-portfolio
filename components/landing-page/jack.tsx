@@ -14,7 +14,7 @@ export default function JackOfAll(): React.ReactElement {
 
   return (
     <div
-      className="w-full h-[40vh] bg-[#111111] md:text-6xl text-xl text-[#e3e3e3] flex justify-center items-start text-center md:leading-16 leading-6 py-10"
+      className="w-full h-[20vh] md:h-[40vh] bg-[#111111] md:text-6xl text-xl text-[#e3e3e3] flex justify-center items-start text-center md:leading-16 leading-6 py-10"
       ref={targetRef}>
       <div className="flex flex-col gap-2">
         {" "}

@@ -9,10 +9,10 @@ export default function Journey(): React.ReactElement {
           <SecondaryBG />
         </div>
         <div className="flex flex-col text-center">
-          <div className="md:text-4xl 2xl:text-5xl font-medium">
+          <div className="md:text-4xl 2xl:text-5xl font-medium text-2xl">
             These are the major milestones which will give an idea
           </div>
-          <div className="md:text-6xl 2xl:text-7xl">
+          <div className="md:text-6xl 2xl:text-7xl text-3xl">
             of how I became a{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-bl from-blue-500 to-[#00cc00] font-medium">
               Problem Solver
