@@ -17,7 +17,7 @@ export default function SvgCover(): React.ReactElement {
   return (
     <div
       ref={containerRef}
-      className="w-full aspect-[16/9] md:h-auto md:block hidden">
+      className="w-full h-screen md:h-auto md:block hidden">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1920 1080"

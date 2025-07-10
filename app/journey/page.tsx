@@ -1,13 +1,10 @@
 import JourneyTimeline from "@/components/journey-page";
-import SecondaryBG from "@/components/secondary-bg";
 
 export default function Journey(): React.ReactElement {
   return (
-    <div className="w-full min-h-[100vh] flex flex-col">
+    <div className="w-screen min-h-[100vh] flex flex-col bg-[#111111]">
       <div className="w-full h-[100vh] bg-[#e9e9e9] text-[#111111] flex items-center justify-center">
-        <div className="absolute w-full hidden md:block">
-          <SecondaryBG />
-        </div>
+        <div className="absolute w-full hidden md:block"></div>
         <div className="flex flex-col text-center">
           <div className="md:text-4xl 2xl:text-5xl font-medium text-2xl">
             These are the major milestones which will give an idea

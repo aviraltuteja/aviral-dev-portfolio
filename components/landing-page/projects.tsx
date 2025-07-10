@@ -3,6 +3,17 @@ import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import {
+  SiNextdotjs,
+  SiPrisma,
+  SiPostgresql,
+  SiDocker,
+  SiFlask,
+  SiDjango,
+  SiRedux,
+} from "react-icons/si";
+import { FaReact, FaCss3Alt } from "react-icons/fa";
+import { Palette, SearchCheck, Atom } from "lucide-react";
 
 export default function Projects(): React.ReactElement {
   type Project = {
@@ -17,21 +28,21 @@ export default function Projects(): React.ReactElement {
   };
 
   const allSkills = [
-    "NextJS",
-    "React",
-    "CSS",
-    "Prisma",
-    "PostgreSQL",
-    "Jotai",
-    "Redux",
-    "UI/UX",
-    "Technical SEO",
-    "Docker",
-    "Flask",
-    "Django",
+    { name: "NextJS", logo: <SiNextdotjs size={40} /> },
+    { name: "React", logo: <FaReact size={40} /> },
+    { name: "CSS", logo: <FaCss3Alt size={40} /> },
+    { name: "Prisma", logo: <SiPrisma size={40} /> },
+    { name: "PostgreSQL", logo: <SiPostgresql size={40} /> },
+    { name: "Jotai", logo: <Atom size={40} /> },
+    { name: "Redux", logo: <SiRedux size={40} /> },
+    { name: "UI/UX", logo: <Palette size={40} /> },
+    { name: "Technical SEO", logo: <SearchCheck size={40} /> },
+    { name: "Docker", logo: <SiDocker size={40} /> },
+    { name: "Flask", logo: <SiFlask size={40} /> },
+    { name: "Django", logo: <SiDjango size={40} /> },
   ];
 
-  const projectData: Project[] = [
+  const experienceData: Project[] = [
     {
       id: 1,
       title: "Surety Seven",
@@ -97,7 +108,7 @@ export default function Projects(): React.ReactElement {
       position: "Software Engineer Intern",
     },
     {
-      id: 5,
+      id: 6,
       title: "TodoList",
       description:
         "I know TodoList is the 'hello world' of development but developed a personal project to learn Django and Redux, building a full-stack task management application. Integrated a Django REST API with PostgreSQL for persistent storage, and added user authentication with JWT. ",
@@ -115,33 +126,45 @@ export default function Projects(): React.ReactElement {
       duration: "Apr'25",
       position: "Personal Project",
     },
+    {
+      id: 5,
+      title: "Web Browser Query Agent",
+      description:
+        "This AI-powered intelligent agent streamlines information retrieval by proactively understanding user intent and delivering concise, validated insights. It optimizes efficiency by leveraging historical data and, when necessary, performing real-time web scrapes to provide actionable summaries.",
+      skills: ["Next", "React", "PostgreSQL", "CSS", "UI/UX"],
+      image: "/images/todolist.png",
+      link: "https://github.com/aviraltuteja/WebBrowserQueryAgent",
+      duration: "Jun'25",
+      position: "Personal Project",
+    },
   ];
 
   const [activeSkill, setActiveSkill] = useState<string | null>(null);
 
   const filteredProjects = activeSkill
-    ? projectData.filter((project) => project.skills.includes(activeSkill))
-    : projectData;
+    ? experienceData.filter((project) => project.skills.includes(activeSkill))
+    : experienceData;
   return (
-    <div className="w-full min-h-[100vh] bg-[#111111] md:px-20 px-6">
+    <div className="w-full min-h-[100vh] bg-[#111111] md:px-20 px-6 py-20">
       <div className="p-6 gap-8 flex flex-col items-center">
-        <div className="flex gap-4 flex-wrap">
-          {allSkills.map((skill) => (
+        <div className="grid md:grid-cols-6 grid-cols-3 md:gap-10 gap-4 ">
+          {allSkills.map(({ name, logo }) => (
             <button
-              key={skill}
-              onClick={() =>
-                setActiveSkill(skill === activeSkill ? null : skill)
-              }
-              className={`px-4 py-2 rounded-sm cursor-pointer text-sm md:text-base 2xl:text-xl  ${
-                activeSkill === skill
+              key={name}
+              title={name}
+              onClick={() => setActiveSkill(name === activeSkill ? null : name)}
+              className={`flex items-center gap-2 px-4 py-4 rounded-sm  cursor-pointer text-sm md:text-base 2xl:text-xl ${
+                activeSkill === name
                   ? "bg-[#00aa00] text-[#e9e9e9]"
                   : "bg-gradient-to-r from-[#222222] via-transparent to-[#222222] text-[#e9e9e9]"
               }`}>
-              {skill}
+              {logo}
             </button>
           ))}
         </div>
-
+        <div className="2xl:text-7xl md:text-6xl text-xl py-8 text-[#e9e9e9]">
+          Experience
+        </div>
         <div className="grid md:grid-cols-2 gap-6">
           <AnimatePresence mode="wait">
             {filteredProjects.map((project) => (

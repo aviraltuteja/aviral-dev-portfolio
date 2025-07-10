@@ -14,7 +14,7 @@ export default function JackOfAll(): React.ReactElement {
 
   return (
     <div
-      className="w-full h-[20vh] md:h-[40vh] bg-[#111111] md:text-6xl text-xl text-[#e3e3e3] flex justify-center items-start text-center md:leading-16 leading-6 py-10"
+      className="w-full h-[20vh] md:h-[40vh] xl:h-[30vh]  bg-[#111111] 2xl:text-7xl md:text-6xl text-xl text-[#e3e3e3] flex justify-center items-start text-center md:leading-16 leading-6 py-10 xl:py-16"
       ref={targetRef}>
       <div className="flex flex-col gap-2">
         {" "}
@@ -54,7 +54,7 @@ const Word = ({
         opacity,
         color,
       }}
-      className="inline-block ">
+      className="inline-block tracking-[0.06rem] ">
       {children}
     </motion.span>
   );

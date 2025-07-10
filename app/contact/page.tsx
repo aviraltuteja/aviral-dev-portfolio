@@ -24,7 +24,7 @@ export default function ContactPage() {
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-4xl font-bold mb-6">
+        className="md:text-4xl text-3xl font-bold mb-6 text-center">
         👋 I am open to Software Development Roles!
       </motion.h1>
 

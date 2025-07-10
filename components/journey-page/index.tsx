@@ -194,7 +194,7 @@ export default function JourneyTimeline(): React.ReactElement {
 
   return (
     <div
-      className="relative w-full max-w-4xl mx-auto py-10 px-4 bg-[#111111]"
+      className="relative w-screen h-full max-w-4xl mx-auto py-10 px-4 bg-[#111111]"
       ref={containerRef}>
       {/* Journey Title */}
       <div className="text-4xl font-bold text-center mb-10 text-[#e9e9e9]">
@@ -252,7 +252,6 @@ export default function JourneyTimeline(): React.ReactElement {
                               alt={milestone.title}
                               className="rounded-xl shadow object-contain "
                               fill
-                              placeholder="blur"
                             />
                           </a>
                         </div>

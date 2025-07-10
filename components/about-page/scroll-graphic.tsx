@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React from "react";
+import { BackgroundBeams } from "../landing-page/bg";
 
 export default function ScrollGraphic(): React.ReactElement {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -21,6 +22,7 @@ export default function ScrollGraphic(): React.ReactElement {
   return (
     <div className="h-[240vh] w-full  bg-[#111111]" ref={containerRef}>
       <div className="sticky top-0 left-0 h-screen">
+        <BackgroundBeams />
         <motion.div
           className="h-screen absolute w-full flex items-center justify-center   md:text-8xl text-6xl text-[#e9e9e9] font-bold"
           style={{ opacity: learnOpacity }}>
