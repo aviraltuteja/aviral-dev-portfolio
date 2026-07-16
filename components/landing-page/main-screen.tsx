@@ -71,7 +71,7 @@ export default function MainScreen(): React.ReactElement {
         <div className="text-center font-medium z-20">
           I am a{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-bl from-blue-500 to-[#00cc00] ">
-            Full Stack Developer
+            Software Engineer
           </span>
         </div>
       </div>

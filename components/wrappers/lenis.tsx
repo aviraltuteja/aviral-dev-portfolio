@@ -17,18 +17,20 @@ export default function SmoothScroll({
       lerp: lerp ? lerp : 0.3,
       wheelMultiplier: wheelMx ? wheelMx : 0.5,
     });
+    let rafId = 0;
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
-      // If needed: lenis.destroy()
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
     };
-  }, []);
+  }, [lerp, wheelMx]);
 
   return <>{children}</>;
 }

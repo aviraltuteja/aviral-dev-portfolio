@@ -5,17 +5,17 @@ import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Aviral Tuteja",
-  description: "Full Stack Developer",
+  description: "Software Engineer",
   openGraph: {
     title: "Aviral Tuteja",
-    description: "Full Stack Developer",
+    description: "Software Engineer",
 
     locale: "en_US",
     type: "website",
   },
   twitter: {
     title: "Aviral Tuteja",
-    description: "Full Stack Developer",
+    description: "Software Engineer",
   },
 };
 

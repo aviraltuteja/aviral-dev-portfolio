@@ -13,7 +13,7 @@ export default function AboutUsPage(): React.ReactElement {
           <div className="h-[100vh] sticky top-0 overflow-hidden items-center justify-center flex flex-col w-full">
             <div className="flex flex-col text-center h-full items-center justify-center z-50">
               <div className="md:text-4xl text-2xl 2xl:text-5xl font-medium">
-                My designation is Software Developer but
+                I work as a Software Engineer, but
               </div>
               <div className="md:text-6xl 2xl:text-7xl text-3xl">
                 I am essentially a{" "}

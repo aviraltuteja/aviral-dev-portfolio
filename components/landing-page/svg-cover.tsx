@@ -20,7 +20,7 @@ export default function SvgCover(): React.ReactElement {
       className="w-full h-screen md:h-auto md:block hidden">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1920 1080"
+        viewBox="0 0 1920 1380"
         className="w-full h-full">
         <defs>
           <filter id="AI_GaussianBlur_4">
@@ -40,12 +40,13 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <path
-            d="M0 431.81h1920V1080H0z"
+            d="M0 431.81h1920V1380H0z"
             style={{
               fill: "#111",
             }}
           />
         </g>
+        <g transform="translate(0,300)">
         <g id="DarkGreen">
           <g className="cls-3">
             <motion.path
@@ -464,9 +465,10 @@ export default function SvgCover(): React.ReactElement {
             />
           </g>
         </g>
+        </g>
         <g id="GreenPaths">
           <motion.path
-            d="M960 0v853.28"
+            d="M960 0v1153.28"
             className="cls-7"
             initial={{ pathLength: 0 }}
             style={{
@@ -474,7 +476,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="M948.72 852.72A11.28 11.28 0 1 0 960 841.44a11.28 11.28 0 0 0-11.28 11.28Z"
+            d="M948.72 1152.72A11.28 11.28 0 1 0 960 1141.44a11.28 11.28 0 0 0-11.28 11.28Z"
             className="cls-8"
             initial={{ pathLength: 0 }}
             style={{
@@ -482,7 +484,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="M940 0v200l-40 40v80l-40 40v120l-40 40v120l-40 40v173.28"
+            d="M940 0v500l-40 40v80l-40 40v120l-40 40v120l-40 40v173.28"
             className="cls-7"
             initial={{ pathLength: 0 }}
             style={{
@@ -490,7 +492,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="M768.72 852.72A11.28 11.28 0 1 0 780 841.44a11.28 11.28 0 0 0-11.28 11.28Z"
+            d="M768.72 1152.72A11.28 11.28 0 1 0 780 1141.44a11.28 11.28 0 0 0-11.28 11.28Z"
             className="cls-8"
             initial={{ pathLength: 0 }}
             style={{
@@ -498,7 +500,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="M980 0v280l40 40v160l40 40v40l-40 40v40l30 40v173.28"
+            d="M980 0v580l40 40v160l40 40v40l-40 40v40l30 40v173.28"
             className="cls-7"
             initial={{ pathLength: 0 }}
             style={{
@@ -506,7 +508,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="M1038.72 852.72a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
+            d="M1038.72 1152.72a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
             className="cls-8"
             initial={{ pathLength: 0 }}
             style={{
@@ -514,7 +516,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="m960 300-20 20v40l-40 40v120l-40 40v80l40 40v30l-30 30v113.28"
+            d="m960 600-20 20v40l-40 40v120l-40 40v80l40 40v30l-30 30v113.28"
             className="cls-7"
             initial={{ pathLength: 0 }}
             style={{
@@ -522,7 +524,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="M858.72 852.72A11.28 11.28 0 1 0 870 841.44a11.28 11.28 0 0 0-11.28 11.28Z"
+            d="M858.72 1152.72A11.28 11.28 0 1 0 870 1141.44a11.28 11.28 0 0 0-11.28 11.28Z"
             className="cls-8"
             initial={{ pathLength: 0 }}
             style={{
@@ -530,7 +532,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="m1020 360 40 40v40l40 40v80l40 40v253.28"
+            d="m1020 660 40 40v40l40 40v80l40 40v253.28"
             className="cls-7"
             initial={{ pathLength: 0 }}
             style={{
@@ -538,7 +540,7 @@ export default function SvgCover(): React.ReactElement {
             }}
           />
           <motion.path
-            d="M1128.72 852.72a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
+            d="M1128.72 1152.72a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
             className="cls-8"
             initial={{ pathLength: 0 }}
             style={{
@@ -549,7 +551,7 @@ export default function SvgCover(): React.ReactElement {
         <g id="GreenGlow">
           <g className="cls-9">
             <motion.path
-              d="M960 0v853.28"
+              d="M960 0v1153.28"
               className="cls-7"
               initial={{ pathLength: 0 }}
               style={{
@@ -557,7 +559,7 @@ export default function SvgCover(): React.ReactElement {
               }}
             />
             <motion.path
-              d="M948.72 852.72A11.28 11.28 0 1 0 960 841.44a11.28 11.28 0 0 0-11.28 11.28Z"
+              d="M948.72 1152.72A11.28 11.28 0 1 0 960 1141.44a11.28 11.28 0 0 0-11.28 11.28Z"
               className="cls-8"
               initial={{ pathLength: 0 }}
               style={{
@@ -567,7 +569,7 @@ export default function SvgCover(): React.ReactElement {
           </g>
           <g className="cls-9">
             <motion.path
-              d="M940-.19v200l-40 40v80l-40 40v120l-40 40v120l-40 40V853.1"
+              d="M940-.19v500l-40 40v80l-40 40v120l-40 40v120l-40 40V1153.1"
               className="cls-7"
               initial={{ pathLength: 0 }}
               style={{
@@ -575,13 +577,13 @@ export default function SvgCover(): React.ReactElement {
               }}
             />
             <motion.path
-              d="M768.72 852.53A11.28 11.28 0 1 0 780 841.25a11.28 11.28 0 0 0-11.28 11.28Z"
+              d="M768.72 1152.53A11.28 11.28 0 1 0 780 1141.25a11.28 11.28 0 0 0-11.28 11.28Z"
               className="cls-8"
             />
           </g>
           <g className="cls-9">
             <motion.path
-              d="M980-.19v280l40 40v160l40 40v40l-40 40v40l30 40V853.1"
+              d="M980-.19v580l40 40v160l40 40v40l-40 40v40l30 40V1153.1"
               className="cls-7"
               initial={{ pathLength: 0 }}
               style={{
@@ -589,13 +591,13 @@ export default function SvgCover(): React.ReactElement {
               }}
             />
             <motion.path
-              d="M1038.72 852.53a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
+              d="M1038.72 1152.53a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
               className="cls-8"
             />
           </g>
           <g className="cls-9">
             <motion.path
-              d="m960 299.81-20 20v40l-40 40v120l-40 40v80l40 40v30l-30 30V853.1"
+              d="m960 599.81-20 20v40l-40 40v120l-40 40v80l40 40v30l-30 30V1153.1"
               className="cls-7"
               initial={{ pathLength: 0 }}
               style={{
@@ -603,13 +605,13 @@ export default function SvgCover(): React.ReactElement {
               }}
             />
             <motion.path
-              d="M858.72 852.53A11.28 11.28 0 1 0 870 841.25a11.28 11.28 0 0 0-11.28 11.28Z"
+              d="M858.72 1152.53A11.28 11.28 0 1 0 870 1141.25a11.28 11.28 0 0 0-11.28 11.28Z"
               className="cls-8"
             />
           </g>
           <g className="cls-9">
             <motion.path
-              d="m1020 359.81 40 40v40l40 40v80l40 40V853.1"
+              d="m1020 659.81 40 40v40l40 40v80l40 40V1153.1"
               className="cls-7"
               initial={{ pathLength: 0 }}
               style={{
@@ -617,12 +619,12 @@ export default function SvgCover(): React.ReactElement {
               }}
             />
             <motion.path
-              d="M1128.72 852.53a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
+              d="M1128.72 1152.53a11.28 11.28 0 1 0 11.28-11.28 11.28 11.28 0 0 0-11.28 11.28Z"
               className="cls-8"
             />
           </g>
         </g>
-        <g id="Icons">
+        <g id="Icons" transform="translate(0,300)">
           <path
             id="database"
             d="M801.87 888v4.69c0 4.31-9.79 7.81-21.87 7.81s-21.87-3.5-21.87-7.81V888c0-4.32 9.79-7.81 21.87-7.81s21.87 3.46 21.87 7.81Zm-5.35 13.16a19.31 19.31 0 0 0 5.35-2.8v9.95c0 4.32-9.79 7.82-21.87 7.82s-21.87-3.5-21.87-7.82v-9.95a19.05 19.05 0 0 0 5.35 2.8 56.48 56.48 0 0 0 33 0ZM758.13 914a18.78 18.78 0 0 0 5.35 2.79 56.48 56.48 0 0 0 33 0 19 19 0 0 0 5.35-2.79v8.39c0 4.31-9.79 7.81-21.87 7.81s-21.87-3.5-21.87-7.81Z"

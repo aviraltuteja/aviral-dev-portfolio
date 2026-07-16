@@ -10,7 +10,7 @@ import SmoothScroll from "@/components/wrappers/lenis";
 export default function Home(): ReactElement {
   return (
     <div className={`w-full  flex flex-col `}>
-      <SmoothScroll wheelMx={0.2} lerp={0.5}>
+      <SmoothScroll wheelMx={0.4} lerp={0.5}>
         <MainScreen />
         <div>
           <SVGCover />

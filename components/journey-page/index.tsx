@@ -21,11 +21,20 @@ export const journey: Journey = {
   title: "The Journey",
   milestones: [
     {
-      title: "Full Stack Developer, Surety Seven",
-      image: "/S7.png",
+      title: "SDE2, Unravel.tech",
+      image: null,
       yearIndex: 0,
+      year: 2025,
+      dateDisplay: "Aug 2025 - Present",
+      description:
+        "Built and shipped multi-agent AI systems with DSPy, ReAct orchestration, eval-driven optimization, semantic search/RAG, and streaming chart widgets, while improving observability and Snowflake-backed data infrastructure. Pune, India.",
+    },
+    {
+      title: "Software Engineer, Surety Seven",
+      image: "/S7.png",
+      yearIndex: 1,
       year: 2024,
-      dateDisplay: "Feb 2024 - Present",
+      dateDisplay: "Feb 2024 - Aug 2025",
       description:
         "Built full stack features, APIs, and internal tools. Revamped landing pages, integrated libraries, and boosted SEO impressions by 200%.",
     },

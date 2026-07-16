@@ -9,11 +9,38 @@ import {
   SiPostgresql,
   SiDocker,
   SiFlask,
-  SiDjango,
   SiRedux,
 } from "react-icons/si";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
-import { Palette, SearchCheck, Atom } from "lucide-react";
+import { Atom } from "lucide-react";
+
+function LangGraphIcon({ size = 40 }: { size?: number }): React.ReactElement {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      aria-label="LangGraph"
+      fill="currentColor">
+      <path d="M5 19H10A5 5 0 115 14ZM19 14A5 5 0 1114 19H19ZM10 5A5 5 0 105 10V5ZM19 5V10A5 5 0 1014 5Z" />
+    </svg>
+  );
+}
+
+function FastApiIcon({ size = 40 }: { size?: number }): React.ReactElement {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      aria-label="FastAPI"
+      fill="currentColor">
+      <path d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896" />
+    </svg>
+  );
+}
 
 export default function Projects(): React.ReactElement {
   type Project = {
@@ -35,14 +62,44 @@ export default function Projects(): React.ReactElement {
     { name: "PostgreSQL", logo: <SiPostgresql size={40} /> },
     { name: "Jotai", logo: <Atom size={40} /> },
     { name: "Redux", logo: <SiRedux size={40} /> },
-    { name: "UI/UX", logo: <Palette size={40} /> },
-    { name: "Technical SEO", logo: <SearchCheck size={40} /> },
     { name: "Docker", logo: <SiDocker size={40} /> },
     { name: "Flask", logo: <SiFlask size={40} /> },
-    { name: "Django", logo: <SiDjango size={40} /> },
+    {
+      name: "DSPy",
+      logo: <div className="font-semibold text-xl tracking-wide">DSPy</div>,
+    },
+    {
+      name: "LangGraph",
+      logo: <LangGraphIcon size={40} />,
+    },
+    {
+      name: "FastAPI",
+      logo: <FastApiIcon size={40} />,
+    },
   ];
 
   const experienceData: Project[] = [
+    {
+      id: 7,
+      title: "Unravel.tech",
+      description:
+        "Designed and shipped multi-agent AI workflows using DSPy, ReAct orchestration, and evaluation-driven optimization. Built RAG and semantic-search pipelines (Pinecone), delivered streaming inline Chart.js widgets, and supported platform migrations and observability improvements across Snowflake, WebSockets, and Langfuse instrumentation.",
+      skills: [
+        "React",
+        "NextJS",
+        "PostgreSQL",
+        "API Development",
+        "DSPy",
+        "LangGraph",
+        "FastAPI",
+        "UI/UX",
+        "Docker",
+      ],
+      image: "/images/unravel-tech.png",
+      link: "https://unravel.tech",
+      duration: "Aug'25 - Present",
+      position: "SDE2",
+    },
     {
       id: 1,
       title: "Surety Seven",
@@ -63,8 +120,8 @@ export default function Projects(): React.ReactElement {
       ],
       image: "/images/surety-seven.png", // Placeholder image path
       link: "https://suretyseven.com", // Placeholder link
-      duration: "Feb'24 - Present",
-      position: "Full Stack Developer",
+      duration: "Feb'24 - Aug'25",
+      position: "Software Engineer",
     },
     {
       id: 2,
@@ -106,36 +163,6 @@ export default function Projects(): React.ReactElement {
       link: "https://kaksha.ai",
       duration: "Sep'23 - Jan'24",
       position: "Software Engineer Intern",
-    },
-    {
-      id: 6,
-      title: "TodoList",
-      description:
-        "I know TodoList is the 'hello world' of development but developed a personal project to learn Django and Redux, building a full-stack task management application. Integrated a Django REST API with PostgreSQL for persistent storage, and added user authentication with JWT. ",
-      skills: [
-        "Django",
-        "Redux",
-        "React",
-        "PostgreSQL",
-        "CSS",
-        "UI/UX",
-        "JWT Authentication",
-      ],
-      image: "/images/todolist.png",
-      link: "https://atlabs-todo.vercel.app/",
-      duration: "Apr'25",
-      position: "Personal Project",
-    },
-    {
-      id: 5,
-      title: "Web Browser Query Agent",
-      description:
-        "This AI-powered intelligent agent streamlines information retrieval by proactively understanding user intent and delivering concise, validated insights. It optimizes efficiency by leveraging historical data and, when necessary, performing real-time web scrapes to provide actionable summaries.",
-      skills: ["Next", "React", "PostgreSQL", "CSS", "UI/UX"],
-      image: "/images/todolist.png",
-      link: "https://github.com/aviraltuteja/WebBrowserQueryAgent",
-      duration: "Jun'25",
-      position: "Personal Project",
     },
   ];
 
