@@ -4,6 +4,16 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 export default function Explanation(): React.ReactElement {
   const stories = [
     {
+      title: "Building Agentic AI Systems at Production Scale",
+      description:
+        "Designed and shipped agentic workflows using DSPy and LangGraph patterns, built FastAPI-based services for orchestration, and iterated with eval-first improvements so systems stayed reliable under real user traffic.",
+    },
+    {
+      title: "Scaling Data Pipelines and Observability",
+      description:
+        "Contributed to platform migrations and backend reliability improvements by supporting Snowflake-aligned data workflows, tightening WebSocket event visibility, and improving Langfuse-based tracing so debugging and iteration became much faster for the team.",
+    },
+    {
       title: "Learning Pusher & WebSockets",
       description:
         "Faced with a challenge of improving inter-team communication for case-based operations, I picked up Pusher from scratch, built dynamic channel communication using WebSockets, and streamlined conversations that were previously scattered across platforms.",
