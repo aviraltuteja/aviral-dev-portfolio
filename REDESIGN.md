@@ -173,17 +173,78 @@ Carried forward across runs until resolved. Items are removed from this table on
 
 | Item | Kind | Status | First flagged |
 | --- | --- | --- | --- |
-| `components/landing-page/skills-and-projects.tsx` | File | Unused — empty placeholder, imported nowhere | Baseline |
-| `components/secondary-bg.tsx` | File | Unused — never imported | Baseline |
-| `public/codebg.webp` | Asset | Referenced only from commented-out code in `main-screen.tsx` | Baseline |
-| `public/file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg` | Assets | `create-next-app` leftovers, unreferenced | Baseline |
-| `public/logos/` | Directory | Empty | Baseline |
-| `--font-geist-sans` / `--font-geist-mono` in `app/globals.css` | Tokens | Declared, never defined or loaded | Baseline |
-| `@next/font` dependency | Package | Legacy; code imports `next/font/google` | Baseline |
-| `bg-primary` in `components/journey-page/index.tsx` | Class | Undefined in theme, no effect | Baseline |
-| `motion` package alongside `framer-motion` | Package | Two copies of the same library; only `bg.tsx` uses `motion/react` | Baseline |
-| `react-hot-toast` in `app/contact/page.tsx` | Integration | Called without a `<Toaster />` mounted anywhere | Baseline |
+| `components/landing-page/skills-and-projects.tsx` | File | **Confirmed dead — safe to delete.** Still zero importers after the redesign | Baseline |
+| `components/secondary-bg.tsx` | File | **Confirmed dead — safe to delete.** Still zero importers; off-palette | Baseline |
+| `public/codebg.webp` | Asset | **Confirmed dead — safe to delete.** Zero references anywhere (baseline's "in a comment" note was wrong) | Baseline |
+| `public/file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg` | Assets | **Confirmed dead — safe to delete.** `create-next-app` leftovers, zero references | Baseline |
+| `public/logos/` | Directory | **Confirmed dead — safe to delete.** Still empty | Baseline |
+| `--font-geist-sans` / `--font-geist-mono` in `app/globals.css` | Tokens | Confirmed dead — still declared in `@theme inline`, never defined or loaded. Untouched by the base redesign | Baseline |
+| `@next/font` dependency | Package | Confirmed dead — code imports `next/font/google` | Baseline |
+| `bg-primary` in `components/journey-page/index.tsx` | Class | Confirmed dead class — undefined in theme, no effect. Now only reachable via `/journey/v1` | Baseline |
+| `motion` package alongside `framer-motion` | Package | Likely dead — only `bg.tsx` (v1-only chain) imports `motion/react`; all redesigned components use `framer-motion` | Baseline |
+| `react-hot-toast` | Integration | Likely dead — moved to `app/contact/v1/page.tsx` by the redesign, still with no `<Toaster />` mounted. Redesigned footer uses inline confirmation instead | Baseline |
+| `app/v1/`, `app/about/v1/`, `app/journey/v1/`, `app/contact/v1/` | Routes | **Decision pending** — deliberate archive of the pre-redesign site. Deleting these turns the 13 superseded components below into confirmed dead in one move | 2026-09-14 |
+| `components/landing-page/{main-screen,bg,svg-cover,jack,projects,quote-banner,learn-more}.tsx` | Files | Superseded by `components/home/*`, but live — imported by `app/v1/page.tsx` | 2026-09-14 |
+| `components/about-page/{scroll-graphic,explanation,experience}.tsx`, `components/parallax-bg.tsx` | Files | Superseded by `components/about/*`, but live — imported by `app/about/v1/page.tsx` | 2026-09-14 |
+| `components/journey-page/index.tsx` (incl. `journey` const, `milestone`/`Journey` interfaces) | File | Superseded by `components/journey/timeline.tsx` + `milestones` in `lib/portfolio-data.ts`, but live — imported by `app/journey/v1/page.tsx` | 2026-09-14 |
+| `components/navbar.tsx` | File | Superseded by `components/redesign/masthead.tsx`, but live — `site-nav.tsx` serves it to all non-redesigned routes | 2026-09-14 |
+| `cn()` in `lib/utils.ts` | Function | Likely dead — sole caller is `bg.tsx`, itself v1-only. Nothing in the redesigned tree uses it | 2026-09-14 |
+| `ProjectCard` export in `components/landing-page/projects.tsx` | Export | Unnecessary export — only call site is line 171 of the same file | 2026-09-14 |
+| Legacy `:root` / `@theme inline` / `body` Arial / `prefers-color-scheme` blocks in `app/globals.css` | Tokens | Superseded by the palette `@theme`, retained for `/v1`. §3 calls for removing the dark-mode block | 2026-09-14 |
+| Jost font import in `app/layout.tsx` | Dependency | Superseded by Fraunces + Inter, retained as the `<body>` default for `/v1` | 2026-09-14 |
+| `/images/*.png` paths in `components/landing-page/projects.tsx` | Refs | Six references to files that do not exist; now only affects `/v1` | 2026-09-14 |
 
 ### Entries
 
-_No redesign work logged yet. The first run of the `redesign-log` skill will add an entry here._
+#### 2026-09-14 — Base redesign: all four pages rebuilt on the paper/sage system, originals archived at `/v1`
+
+**Commit range:** Baseline (§7) → `4029b18` (through `eb36b43`), working tree clean, 0 uncommitted files
+**Scope:** Every route recomposed onto new components; the entire pre-redesign component tree left in place and re-routed to `/v1` sibling pages; palette and type tokens added to `app/globals.css` and `app/layout.tsx`.
+
+**Changes made**
+- `app/globals.css` — added a real `@theme` block with the six palette tokens (`--color-paper`, `--color-sage`, `--color-terracotta`, `--color-apricot`, `--color-brick`, `--color-success`) plus `--font-display` / `--font-body`; added `.duotone` (grayscale + multiply on apricot, sage `lighten` overlay), `.paper-grain`, `.theme-paper ::selection`, and a `marquee-x` keyframe with a `prefers-reduced-motion` opt-out. Legacy `:root`, `@theme inline`, and `body` rules were **left in place** so `/v1` renders unchanged.
+- `app/layout.tsx` — Fraunces and Inter loaded via `next/font/google` as CSS variables (§4 pairing); Jost kept as the `<body>` default so pre-redesign pages are untouched; `<Navbar />` swapped for `<SiteNav />`.
+- `app/page.tsx` — home rebuilt as `Hero` → `Ticker` → `InkFlood` → `Receipts` → `SelectedWork` → `PullQuote` → `Footer`, replacing the `MainScreen`/`SVGCover`/`JackOfAll`/`Projects`/`QuoteBanner`/`LearnMore` stack. `InkFlood` carries the home page's one experimental moment (§6), retinted paper → sage.
+- `app/about/page.tsx` — rebuilt as `AboutHero` → `Cycle` → `FieldNotes` → `Thesis` → `Footer`; `Cycle` keeps the sticky Learn/Implement/Iterate moment.
+- `app/journey/page.tsx` — rebuilt as `JourneyHero` → `Timeline` → `Footer`; timeline images now take bordered/duotone treatment instead of `rounded-xl shadow`.
+- `app/contact/page.tsx` — rebuilt around `Channels` with an inline copy confirmation; deliberately holds no scroll experiment, per §6's budget.
+- `components/site-nav.tsx` — routes the chrome by pathname: the four redesigned routes get `Masthead`, everything else (including `/v1`) keeps the original `Navbar`.
+- Gradient-text emphasis (blue→`#00cc00`) is gone from all redesigned pages, replaced by terracotta small-caps eyebrows per §4.
+- **Palette compliance verified:** zero hardcoded hex values across all redesigned pages and the `components/{home,about,journey,contact,redesign}` trees; `border-sage` appears 35 times as the standard image/card frame.
+
+**Files added**
+- `lib/portfolio-data.ts` — single content source (`profile`, `socials`, `colophon`, `tools`, `work`, `cycle`, `fieldNotes`, `aboutThesis`, `milestones`, `receipts`, types `Work`/`Milestone`/`Track`); replaces the content that was hardcoded inside `landing-page/projects.tsx` and `journey-page/index.tsx`.
+- `components/home/` — `hero.tsx`, `ticker.tsx`, `ink-flood.tsx`, `receipts.tsx`, `selected-work.tsx`, `pull-quote.tsx`
+- `components/about/` — `hero.tsx`, `cycle.tsx`, `field-notes.tsx`, `thesis.tsx`, `parallax-field.tsx`
+- `components/journey/` — `hero.tsx`, `timeline.tsx`
+- `components/contact/channels.tsx` — social links + clipboard copy with inline confirmation
+- `components/redesign/masthead.tsx`, `components/redesign/footer.tsx` — shared chrome
+- `components/site-nav.tsx` — pathname-based chrome router
+- `app/v1/page.tsx`, `app/about/v1/page.tsx`, `app/journey/v1/page.tsx`, `app/contact/v1/page.tsx` — the four pre-redesign pages preserved verbatim
+- `.cursor/skills/redesign-log/SKILL.md` — this log's skill
+
+**Functions no longer needed**
+- `SkillsAndProjects()` in `components/landing-page/skills-and-projects.tsx` — Confirmed dead. Empty placeholder, zero importers before or after the redesign.
+- `SecondaryBG()` in `components/secondary-bg.tsx` — Confirmed dead. Zero importers; its circuit-board green is off-palette anyway.
+- `MainScreen()`, `SvgCover()`, `JackOfAll()`, `Projects()`, `QuoteBanner()`, `LearnMore()` — Superseded by the `components/home/*` set. Still reachable, but only through `app/v1/page.tsx`.
+- `ScrollGraphic()`, `Explanation()`, `Experience()`, `ParallaxBg()` — Superseded by `about/cycle.tsx`, `about/field-notes.tsx`, `about/thesis.tsx`, `about/parallax-field.tsx`. Reachable only through `app/about/v1/page.tsx`.
+- `JourneyTimeline()` plus the `journey` const and `milestone`/`Journey` interfaces in `components/journey-page/index.tsx` — Superseded by `components/journey/timeline.tsx` and `milestones`/`Milestone` in `lib/portfolio-data.ts`. Reachable only through `app/journey/v1/page.tsx`.
+- `BackgroundBeams` in `components/landing-page/bg.tsx` — Superseded. Its cyan/purple beam gradient is off-palette; used only by `main-screen.tsx` and `about-page/scroll-graphic.tsx`, both v1-only.
+- `cn()` in `lib/utils.ts` — Likely dead. Its only caller is `bg.tsx`, which is itself v1-only; nothing in the redesigned tree uses it.
+- `ProjectCard()` in `components/landing-page/projects.tsx` — Superseded, and its `export` is unnecessary regardless: the only call site is line 171 of the same file.
+- `Navbar()` in `components/navbar.tsx` — **Still needed.** `site-nav.tsx` serves it to every non-redesigned route. Retire only when `/v1` goes.
+
+**Files no longer needed**
+- `components/landing-page/skills-and-projects.tsx` — Confirmed dead. Safe to delete now.
+- `components/secondary-bg.tsx` — Confirmed dead. Safe to delete now.
+- `public/codebg.webp` — Confirmed dead. Zero references anywhere in `app/`, `components/`, or `lib/`; the baseline note that it survived in a `main-screen.tsx` comment was wrong, there is no reference at all.
+- `public/file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg` — Confirmed dead. `create-next-app` leftovers, zero references. Safe to delete now.
+- `public/logos/` — Confirmed dead. Still empty.
+- `components/landing-page/{main-screen,bg,svg-cover,jack,projects,quote-banner,learn-more}.tsx`, `components/about-page/{scroll-graphic,explanation,experience}.tsx`, `components/journey-page/index.tsx`, `components/parallax-bg.tsx`, `components/navbar.tsx` — Superseded but **live**: each is imported by a `/v1` route or by `site-nav.tsx`. This is the archive, not dead code — it becomes deletable in one batch the moment the `/v1` routes are dropped.
+
+**Notes**
+- **The `/v1` decision is the big one.** 13 old components and 4 archive routes are alive solely to keep the pre-redesign site reachable. Deleting `app/v1/`, `app/about/v1/`, `app/journey/v1/`, `app/contact/v1/` makes that whole tree confirmed dead in a single move, and also clears the legacy `globals.css` tokens, the Jost import, `bg-primary`, the `motion` package, `react-hot-toast`, `cn()`, and the missing `public/images/*` references. Nothing else is blocking it.
+- The legacy half of `globals.css` (`--background`, `--foreground`, `@theme inline`, the `body` Arial rule, the `prefers-color-scheme` block) is intentionally retained for `/v1`. §3 calls for removing the dark-mode block, so this is a deviation with a deadline, not a decision.
+- `react-hot-toast` is now only used by `app/contact/v1/page.tsx`, still with no `<Toaster />` mounted, so that copy confirmation remains silently broken on the archived page. `components/redesign/footer.tsx` documents the choice to use inline confirmation instead.
+- The six `/images/*.png` paths in `landing-page/projects.tsx` still point at files that do not exist. `lib/portfolio-data.ts` sidesteps this entirely, so the broken paths now affect only `/v1`.
+- Both `motion` and `framer-motion` are still installed. Only `bg.tsx` imports `motion/react`; every redesigned component uses `framer-motion`. Removing `bg.tsx` retires the duplicate dependency.
