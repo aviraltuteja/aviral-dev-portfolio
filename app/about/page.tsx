@@ -1,35 +1,28 @@
-import Experience from "@/components/about-page/experience";
-import Explanation from "@/components/about-page/explanation";
-import ScrollGraphic from "@/components/about-page/scroll-graphic";
-import ParallaxBg from "@/components/parallax-bg";
-import SmoothScroll from "@/components/wrappers/lenis";
 import React from "react";
+import SmoothScroll from "@/components/wrappers/lenis";
+import AboutHero from "@/components/about/hero";
+import Cycle from "@/components/about/cycle";
+import FieldNotes from "@/components/about/field-notes";
+import Thesis from "@/components/about/thesis";
+import Footer from "@/components/redesign/footer";
 
-export default function AboutUsPage(): React.ReactElement {
+/**
+ * Redesigned about page (REDESIGN.md). The sticky Learn / Implement / Iterate
+ * cycle is this page's single experimental moment; everything around it stays
+ * quiet and legible.
+ *
+ * The pre-redesign composition is preserved at /about/v1.
+ */
+export default function AboutPage(): React.ReactElement {
   return (
-    <SmoothScroll>
-      <div className="w-full min-h-[100vh] flex flex-col relative items-center justify-center">
-        <div className="w-full h-[200vh] bg-[#e9e9e9] text-[#111111] flex flex-col items-center relative">
-          <div className="h-[100vh] sticky top-0 overflow-hidden items-center justify-center flex flex-col w-full">
-            <div className="flex flex-col text-center h-full items-center justify-center z-50">
-              <div className="md:text-4xl text-2xl 2xl:text-5xl font-medium">
-                My designation is Software Developer but
-              </div>
-              <div className="md:text-6xl 2xl:text-7xl text-3xl">
-                I am essentially a{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-bl from-blue-500 to-[#00cc00] font-medium">
-                  Problem Solver
-                </span>
-                .
-              </div>
-            </div>
-          </div>
-          <ParallaxBg />
-        </div>
-        <ScrollGraphic />
-        <Explanation />
-        <Experience />
-      </div>
-    </SmoothScroll>
+    <main className="theme-paper w-full bg-paper font-body text-sage">
+      <SmoothScroll lerp={0.12} wheelMx={1}>
+        <AboutHero />
+        <Cycle />
+        <FieldNotes />
+        <Thesis />
+        <Footer previousHref="/about/v1" />
+      </SmoothScroll>
+    </main>
   );
 }

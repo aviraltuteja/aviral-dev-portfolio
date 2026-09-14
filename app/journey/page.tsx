@@ -1,24 +1,23 @@
-import JourneyTimeline from "@/components/journey-page";
+import React from "react";
+import SmoothScroll from "@/components/wrappers/lenis";
+import JourneyHero from "@/components/journey/hero";
+import Timeline from "@/components/journey/timeline";
+import Footer from "@/components/redesign/footer";
 
+/**
+ * Redesigned journey page (REDESIGN.md). The scroll-drawn timeline rule is this
+ * page's single experimental moment.
+ *
+ * The pre-redesign composition is preserved at /journey/v1.
+ */
 export default function Journey(): React.ReactElement {
   return (
-    <div className="w-screen min-h-[100vh] flex flex-col bg-[#111111]">
-      <div className="w-full h-[100vh] bg-[#e9e9e9] text-[#111111] flex items-center justify-center">
-        <div className="absolute w-full hidden md:block"></div>
-        <div className="flex flex-col text-center">
-          <div className="md:text-4xl 2xl:text-5xl font-medium text-2xl">
-            These are the major milestones which will give an idea
-          </div>
-          <div className="md:text-6xl 2xl:text-7xl text-3xl">
-            of how I became a{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-bl from-blue-500 to-[#00cc00] font-medium">
-              Problem Solver
-            </span>
-            .
-          </div>
-        </div>
-      </div>
-      <JourneyTimeline />
-    </div>
+    <main className="theme-paper w-full bg-paper font-body text-sage">
+      <SmoothScroll lerp={0.12} wheelMx={1}>
+        <JourneyHero />
+        <Timeline />
+        <Footer previousHref="/journey/v1" />
+      </SmoothScroll>
+    </main>
   );
 }

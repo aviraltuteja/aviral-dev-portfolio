@@ -24,3 +24,78 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ==========================================================================
+   Redesign theme — see REDESIGN.md §3 (palette) and §4 (typography).
+   Added alongside the legacy tokens above so the pre-redesign pages keep
+   rendering unchanged. Only `.theme-paper` subtrees opt into this system.
+   ========================================================================== */
+
+@theme {
+  --color-paper: #f6f1e7;
+  --color-sage: #294a43;
+  --color-terracotta: #b87562;
+  --color-apricot: #e8c7a8;
+  --color-brick: #b84c4c;
+  --color-success: #5e8c72;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
+
+.theme-paper ::selection {
+  background-color: var(--color-apricot);
+  color: var(--color-sage);
+}
+
+/* Duotone (REDESIGN.md §5): grayscale the photo, multiply it onto an apricot
+   ground for the highlights, then lift the shadows to sage with `lighten`.
+   Every photo therefore resolves to two inks from the palette. */
+.duotone {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-apricot);
+}
+
+.duotone img {
+  filter: grayscale(1) contrast(1.06);
+  mix-blend-mode: multiply;
+}
+
+.duotone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-sage);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+/* Print-adjacent tooth on the paper ground. Deliberately near-invisible. */
+.paper-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-x 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
