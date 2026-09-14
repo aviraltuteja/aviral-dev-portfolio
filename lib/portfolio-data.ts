@@ -7,7 +7,7 @@
 
 export const profile = {
   name: "Aviral Tuteja",
-  role: "Full Stack Developer",
+  role: "SDE2",
   location: "Delhi, India",
   email: "aviraltuteja@gmail.com",
   resume:
@@ -26,7 +26,7 @@ export const socials = [
 export const colophon = [
   {
     label: "Now",
-    value: "Full Stack Developer at Surety Seven, since Feb 2024.",
+    value: "SDE2 at Unravel.tech, building multi-agent AI systems.",
   },
   {
     label: "Reaching for",
@@ -76,10 +76,22 @@ export type Work = {
 
 export const work: Work[] = [
   {
+    id: 7,
+    title: "Unravel.tech",
+    role: "SDE2",
+    period: "Aug 2025 — Present",
+    link: "https://unravel.tech",
+    summary:
+      "Built production multi-agent AI systems with DSPy, RAG, streaming widgets, and evaluation-led iteration.",
+    detail:
+      "Designed and shipped a portfolio of DSPy-based agents, including workflow selection, ReAct tool-use orchestration, and domain workflows for CRM context, meeting prep, and hygiene automation. Built Pinecone-backed semantic search and RAG pipelines, shipped streaming inline Chart.js widgets, and improved observability/data infrastructure with Langfuse instrumentation and Snowflake-backed repositories.",
+    tools: ["TypeScript", "PostgreSQL", "Flask", "Docker", "API Development"],
+  },
+  {
     id: 1,
     title: "Surety Seven",
     role: "Full Stack Developer",
-    period: "Feb 2024 — Present",
+    period: "Feb 2024 — Aug 2025",
     link: "https://suretyseven.com",
     summary:
       "Document generation, real-time internal chat, and a landing page that tripled search impressions.",
@@ -371,7 +383,7 @@ export const milestones: Milestone[] = [
   },
   {
     year: 2024,
-    date: "Feb 2024 — Present",
+    date: "Feb 2024 — Aug 2025",
     title: "Full Stack Developer, Surety Seven",
     description:
       "Built full stack features, APIs, and internal tools. Revamped landing pages, integrated libraries, and lifted SEO impressions by 200%.",
@@ -393,6 +405,15 @@ export const milestones: Milestone[] = [
     title: "Software Developer & Consultant, CGIAR",
     description:
       "Migrated legacy databases and deployed Flask apps with near-zero downtime, and delivered new data visualisations with Plotly.",
+    image: null,
+    track: "Engineering",
+  },
+  {
+    year: 2025,
+    date: "Aug 2025 — Present",
+    title: "SDE2, Unravel.tech",
+    description:
+      "Built and shipped multi-agent AI systems with DSPy, ReAct orchestration, eval-driven optimization, semantic-search/RAG pipelines, and streaming widget generation. Location: Pune, India.",
     image: null,
     track: "Engineering",
   },

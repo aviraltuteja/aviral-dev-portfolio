@@ -44,6 +44,24 @@ export default function Projects(): React.ReactElement {
 
   const experienceData: Project[] = [
     {
+      id: 7,
+      title: "Unravel.tech",
+      description:
+        "Designed and shipped multi-agent AI workflows using DSPy, ReAct orchestration, and evaluation-driven optimization. Built RAG and semantic-search pipelines (Pinecone), delivered streaming inline Chart.js widgets, and improved observability/data infrastructure with Snowflake and Langfuse instrumentation.",
+      skills: [
+        "React",
+        "NextJS",
+        "PostgreSQL",
+        "API Development",
+        "UI/UX",
+        "Docker",
+      ],
+      image: "/images/unravel-tech.png",
+      link: "https://unravel.tech",
+      duration: "Aug'25 - Present",
+      position: "SDE2 • Pune, India",
+    },
+    {
       id: 1,
       title: "Surety Seven",
       description:
@@ -63,7 +81,7 @@ export default function Projects(): React.ReactElement {
       ],
       image: "/images/surety-seven.png", // Placeholder image path
       link: "https://suretyseven.com", // Placeholder link
-      duration: "Feb'24 - Present",
+      duration: "Feb'24 - Aug'25",
       position: "Full Stack Developer",
     },
     {
